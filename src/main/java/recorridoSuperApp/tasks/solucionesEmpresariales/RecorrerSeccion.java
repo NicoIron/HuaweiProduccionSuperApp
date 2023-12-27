@@ -119,7 +119,7 @@ public class RecorrerSeccion implements Task {
 
 
         //RETIRADO DE LA SUPER APP
-      /*  try {
+       /* try {
             actor.attemptsTo(
                     WaitUntil.the(BTN_CONSULTA_CONSUMOS, isVisible()).forNoMoreThan(30).seconds(),
                     Click.on(BTN_CONSULTA_CONSUMOS),
@@ -135,7 +135,7 @@ public class RecorrerSeccion implements Task {
             GoBack.DoWhileForBacKPage(actor, BTN_CONSULTA_CONSUMOS, "Consulta consumos");
         }*/
 
-/*
+
         try {
             actor.attemptsTo(
                     WaitUntil.the(BTN_INICIO_DE_SESION, isVisible()).forNoMoreThan(30).seconds(),
@@ -152,7 +152,53 @@ public class RecorrerSeccion implements Task {
             GoBack.DoWhileForBacKPage(actor, BTN_INICIO_DE_SESION, "Inicio de Sesión");
         }
 
-*/
+        try {
+            actor.attemptsTo(
+                    WaitUntil.the(BTN_CERTIFICADO_IP_S, isVisible()).forNoMoreThan(30).seconds(),
+                    Click.on(BTN_CERTIFICADO_IP_S),
+                    WaitUntil.the(VISUALIZACION_CERTIFICADO_IP, isVisible()).forNoMoreThan(30).seconds());
+            GoBack.DoWhileForBacKPage(actor, BTN_CERTIFICADO_IP_S, "Inicio de Sesión");
+
+        } catch (Exception e) {
+            Serenity.takeScreenshot();
+            ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + BTN_INICIO_DE_SESION
+                    + " en la categoría de " + soluciones_empresariales);
+            Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + BTN_INICIO_DE_SESION +
+                    " Detalle del error: " + e.getMessage());
+            GoBack.DoWhileForBacKPage(actor, BTN_CERTIFICADO_IP_S, "Inicio de Sesión");
+        }
+
+        try {
+            actor.attemptsTo(
+                    WaitUntil.the(BTN_CERTIFICADO_IP_S, isVisible()).forNoMoreThan(30).seconds(),
+                    Click.on(BTN_CERTIFICADO_IP_S),
+                    WaitUntil.the(VISUALIZACION_CERTIFICADO_IP, isVisible()).forNoMoreThan(30).seconds());
+            GoBack.DoWhileForBacKPage(actor, BTN_CERTIFICADO_IP_S, "Inicio de Sesión");
+
+        } catch (Exception e) {
+            Serenity.takeScreenshot();
+            ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + BTN_INICIO_DE_SESION
+                    + " en la categoría de " + soluciones_empresariales);
+            Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + BTN_INICIO_DE_SESION +
+                    " Detalle del error: " + e.getMessage());
+            GoBack.DoWhileForBacKPage(actor, BTN_CERTIFICADO_IP_S, "Inicio de Sesión");
+        }
+        try {
+            actor.attemptsTo(
+                    WaitUntil.the(BTN_GESTION_DE_LA_CUENTA, isVisible()).forNoMoreThan(30).seconds(),
+                    Click.on(BTN_GESTION_DE_LA_CUENTA),
+                    WaitUntil.the(VISUAL_GESTION_DE_LA_CUENTA, isVisible()).forNoMoreThan(30).seconds());
+            GoBack.DoWhileForBacKPage(actor, BTN_GESTION_DE_LA_CUENTA, "Inicio de Sesión");
+
+        } catch (Exception e) {
+            Serenity.takeScreenshot();
+            ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + BTN_INICIO_DE_SESION
+                    + " en la categoría de " + soluciones_empresariales);
+            Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + BTN_INICIO_DE_SESION +
+                    " Detalle del error: " + e.getMessage());
+            GoBack.DoWhileForBacKPage(actor, BTN_GESTION_DE_LA_CUENTA, "Inicio de Sesión");
+        }
+
         try {
             actor.attemptsTo(
                     WaitUntil.the(BTN_DEVOLUCION_EQUIPOS, isVisible()).forNoMoreThan(30).seconds(),

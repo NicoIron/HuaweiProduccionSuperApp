@@ -40,9 +40,8 @@ public class ClaroPayTask implements Task {
 			actor.attemptsTo(
 					Click.on(BTN_CLARO_PAY),
 				    WaitUntil.the(TXT_CLARO_PAY,
-						isCurrentlyEnabled()).forNoMoreThan(30).seconds(),
-					Click.on(TXT_CLARO_PAY),
-					Click.on(BTN_CLARO_ATRAS));
+						isCurrentlyEnabled()).forNoMoreThan(30).seconds()
+					);
 
 			GoBack.DoWhileForBacKPage(actor, BTN_CLARO_PAY,"Mundo Claro");
 

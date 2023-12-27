@@ -40,8 +40,8 @@ public class TiendaClaroTask implements Task {
 			actor.attemptsTo(
 					Click.on(BTN_TIENDA_CLARO),
 				    WaitUntil.the(TXT_TIENDA_CLARO,
-						isCurrentlyEnabled()).forNoMoreThan(30).seconds(),
-					Click.on(TXT_TIENDA_CLARO));
+						isCurrentlyEnabled()).forNoMoreThan(30).seconds()
+					);
 			GoBack.DoWhileForBacKPage(actor, BTN_TIENDA_CLARO,"Mundo Claro");
 
 		} catch (Exception e) {

@@ -7,13 +7,14 @@ import net.serenitybdd.screenplay.targets.Target;
 public class EntretenimientoInterface extends PageObject {
     public static final Target BTN_VER_MAS_ENTRETENIMIENTO = Target.the("VER MAS ENTRETENIMIENTO")
             .located(MobileBy.xpath("//android.widget.TextView[@resource-id='com.clarocolombia.miclaro:id/mini_program__name' and @text='Ver más']"));
+
     public static final Target SPLASH_CLARO_ENTRETENIMIENTO = Target.the("VER MAS ENTRETENIMIENTO")
             .located(MobileBy.id("com.clarocolombia.miclaro:id/content_id"));
 
     public static final Target Visualizar_ClaroMusica = Target.the("Ver Claro Musica")
             .located(MobileBy.xpath("//android.widget.TextView[@text=\"Tus servicios Claro\"]"));
 
-    public static final Target Visualizar_Gestiona_Tu_Cuenta = Target.the("Ver Claro Musica")
+    public static final Target Visualizar_Gestiona_Tu_Cuenta = Target.the("Ver Gestiona tu cuenta")
             .located(MobileBy.xpath("//android.widget.TextView[@text=\"Gestiona tu cuenta\"]"));
 
     public static final Target BTN_Claro_Video = Target.the("INGRESAR A CLARO VIDEO")
@@ -33,6 +34,14 @@ public class EntretenimientoInterface extends PageObject {
 
     public static final Target BTN_NETFLIX = Target.the("INGRESAR A NETFLIX")
             .located(MobileBy.xpath("//android.widget.TextView[@resource-id='com.clarocolombia.miclaro:id/tv_name' and @text='Netflix']"));
+
+    public static final Target BTN_Claro_Club = Target.the("INGRESAR A CLARO CLUB")
+            .located(MobileBy.xpath("//android.widget.TextView[@resource-id='com.clarocolombia.miclaro:id/tv_name' and @text='Claro Club']"));
+    public static final Target  Visualizar_Tus_Servicios = Target.the("VISUALIZACION CLARO GAMING")
+            .located(MobileBy.xpath("//android.widget.TextView[@text=\"Tus servicios Claro\"]"));
+
+    public static final Target RED_MAS_NOTICIAS_TITLE = Target.the("VER RED MAS NOTICIAS TITULO")
+            .located(MobileBy.id("com.clarocolombia.miclaro:id/h5_tv_title"));
 
 
 

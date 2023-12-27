@@ -48,7 +48,16 @@ public class SolucionesEmpresarialesInterface {
 
     public static final Target BTN_INICIO_DE_SESION = Target.the("Mini Programa Inicio de Sesión").
             located(MobileBy.xpath("//*[@text='Inicio de Sesión']"));
+    public static final Target BTN_CERTIFICADO_IP_S = Target.the("Mini Programa CERTIFICADO IPS").
+            located(MobileBy.xpath("//*[@text='Certificado IP’s']"));
+    public static final Target VISUALIZACION_CERTIFICADO_IP = Target.the("Mini Programa CERTIFICADO IPS").
+            located(MobileBy.xpath("//*[@text='Certificado IPs']"));
 
+    public static final Target BTN_GESTION_DE_LA_CUENTA = Target.the("Mini Programa CERTIFICADO IPS").
+            located(MobileBy.xpath("//*[@text='PROD_Gestión de la cuenta']"));
+
+    public static final Target VISUAL_GESTION_DE_LA_CUENTA = Target.the("Mini Programa CERTIFICADO IPS").
+            located(MobileBy.xpath("//*[@text='Gestión de la cuenta']"));
     public static final Target CERRAR_INICIO_DE_SESION = Target.the("Mini Programa Inicio de Sesión").
             located(MobileBy.xpath("(//*[@class='android.widget.TextView'])[7]"));
 

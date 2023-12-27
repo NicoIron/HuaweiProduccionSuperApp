@@ -77,7 +77,7 @@ public class MundoClaroInterface extends PageObject {
 
     public static final Target TXT_TIENDA_CLARO = Target
             .the("Texto de  la web tienda claro")
-            .located(MobileBy.xpath("//android.widget.TextView[contains(@text,'Tienda Online Claro Colombia | Estrena con Claro esta Navidad')]"));
+            .located(MobileBy.xpath("//android.widget.TextView[contains(@text,'Tienda Online Claro Colombia | Estrena con Claro')]"));
 
 
 

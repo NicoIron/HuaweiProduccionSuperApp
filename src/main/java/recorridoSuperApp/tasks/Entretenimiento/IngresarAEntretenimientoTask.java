@@ -18,6 +18,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static recorridoSuperApp.userInterfaces.Entretenimiento.EntretenimientoInterface.*;
+import static recorridoSuperApp.userInterfaces.Entretenimiento.EntretenimientoInterface.BTN_Claro_Club;
 import static recorridoSuperApp.userInterfaces.loguinProduc.LogueoInterface.*;
 
 public class IngresarAEntretenimientoTask implements Task {
@@ -55,9 +56,13 @@ public class IngresarAEntretenimientoTask implements Task {
             case "Netflix":
                 Ingresar_Netflix(actor);
                 break;
+            case "Claro Club":
+                Ingresar_Claro_Club(actor);
+                break;
             case "ALL":
                 Ingresar_Claro_video(actor);
                 Ingresar_Red_Mas(actor);
+                Ingresar_Claro_Club(actor);
                 Ingresar_Claro_Musica(actor);
                 Ingresar_La_Tele_Letal(actor);
                 Ingresar_HBO(actor);
@@ -87,6 +92,23 @@ public class IngresarAEntretenimientoTask implements Task {
             GoBack.DoWhileForBacKPage(actor, BTN_Claro_Video,"Menu entretenimiento");
         }
     }
+    @Step
+    public void Ingresar_Claro_Club(Actor actor) {
+        try {
+            actor.attemptsTo(
+                    Click.on(BTN_Claro_Club),
+                    WaitUntil.the(Visualizar_Tus_Servicios, isVisible()).forNoMoreThan(30).seconds()
+            );
+            GoBack.DoWhileForBacKPage(actor, BTN_Claro_Club,"Menu entretenimiento");
+        } catch (Exception e) {
+            Serenity.takeScreenshot();
+            ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + "Devolución de equipos"
+                    + " en la categoría de " + categoria);
+            Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + "Devolución de equipos" +
+                    " Detalle del error: " + e.getMessage());
+            GoBack.DoWhileForBacKPage(actor, BTN_Claro_Club,"Menu entretenimiento");
+        }
+    }
 
     @Step
     public void Ingresar_Red_Mas(Actor actor) {
@@ -110,7 +132,7 @@ public class IngresarAEntretenimientoTask implements Task {
         try {
             actor.attemptsTo(
                     Click.on(BTN_La_Tele_Letal),
-                    WaitUntil.the(SPLASH_CLARO_ENTRETENIMIENTO, isVisible()).forNoMoreThan(30).seconds()
+                    WaitUntil.the(RED_MAS_NOTICIAS_TITLE, isVisible()).forNoMoreThan(30).seconds()
             );
             GoBack.DoWhileForBacKPage(actor, BTN_La_Tele_Letal,"Menu entretenimiento");
 
@@ -146,7 +168,7 @@ public class IngresarAEntretenimientoTask implements Task {
         try {
             actor.attemptsTo(
                     Click.on(BTN_HBO),
-                    WaitUntil.the(SPLASH_CLARO_ENTRETENIMIENTO, isVisible()).forNoMoreThan(30).seconds()
+                    WaitUntil.the(Visualizar_ClaroMusica, isVisible()).forNoMoreThan(30).seconds()
             );
             GoBack.DoWhileForBacKPage(actor, BTN_HBO,"Menu entretenimiento");
 

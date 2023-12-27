@@ -50,12 +50,12 @@ public class IngresarAMundoClaro implements Interaction {
 				break;
 			case "All":
 				//Btn_TarjetaTuya(actor);
-				//Btn_PruebaT(actor);
+				Btn_PruebaT(actor);
 				//Btn_HogarSeguro(actor);
 				//Btn_VehiculoConectado(actor);
 				//Btn_ClaroClub(actor);
 				Btn_TiendaClaro(actor);
-				//Btn_ClaroPay(actor);
+				Btn_ClaroPay(actor);
 				break;
 
 		}
