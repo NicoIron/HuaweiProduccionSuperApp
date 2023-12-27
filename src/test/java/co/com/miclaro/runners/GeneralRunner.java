@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
     features = "src/test/resources/features",
     glue = {"co.com.miclaro/stepDefinitions"},
     snippets = SnippetType.CAMELCASE,
-    tags = {"@Produccion_Soluciones_Empresariales"}
+    tags = {"@Produccion_Pagos_y_cosutlas"}
 
 )
 

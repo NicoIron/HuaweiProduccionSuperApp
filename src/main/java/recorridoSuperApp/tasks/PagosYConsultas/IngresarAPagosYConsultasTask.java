@@ -29,12 +29,16 @@ public class IngresarAPagosYConsultasTask implements Task {
 			case "All":
 				Ingresar_a_pagos_y_consultas(actor);
 				Ingresar_a_Consultar_Portabilidad(actor);
-				Ingresar_a_envio_de_sim_card(actor);
+				//Ingresar_a_envio_de_sim_card(actor);
 				Ingresar_a_solicitar_traslado(actor);
 				Ingresar_a_devolucion_de_equipos(actor);
 				Ingresar_a_Adquiere_una_Linea_Nueva(actor);
 				Ingresar_a_Consulta_el_estado_PQR(actor);
 				Ingresar_a_Agendar_turnos(actor);
+				Ingresar_a_Vehiculo_Conectado(actor);
+				Ingresar_a_Tarjeta_Tuya(actor);
+				Ingresar_Servicios_Chat(actor);
+				Ingresar_a_Familia_y_Amigos(actor);
 				break;
 		}
 	}
@@ -196,6 +200,83 @@ public class IngresarAPagosYConsultasTask implements Task {
 		}
 		GoBack.DoWhileForBacKPage(actor, TXT_PAGOS_Y_CONSULTAS, "Pagos y consultas");
 	}
+	@Step
+	public void Ingresar_a_Vehiculo_Conectado(Actor actor) {
+		try {
+			actor.attemptsTo(
+					//Click.on(BTN_VER_MAS),
+					Click.on(BTN_Vehiculo_Conectado),
+					WaitUntil.the(WEBVIEW_Vehiculo_conectado, isVisible())
+			);
 
+			GoBack.DoWhileForBacKPage(actor, BTN_Vehiculo_Conectado, "Pagos y consultas");
+		} catch (Exception e) {
+			Serenity.takeScreenshot();
+			ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + WEBVIEW_CONSULTA_TU_SIM
+					+ " en la categoría de " + categoria);
+			Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + WEBVIEW_CONSULTA_TU_SIM +
+					" Detalle del error: " + e.getMessage());
+		}
+		GoBack.DoWhileForBacKPage(actor, BTN_Vehiculo_Conectado, "Pagos y consultas");
+	}
+
+	@Step
+	public void Ingresar_a_Tarjeta_Tuya(Actor actor) {
+		try {
+			actor.attemptsTo(
+					//Click.on(BTN_VER_MAS),
+					Click.on(BTN_Tarjeta_Credito_Tuya),
+					WaitUntil.the(WEBVIEW_Tarjeta_Credito_Tuya, isVisible())
+			);
+
+			GoBack.DoWhileForBacKPage(actor, BTN_Tarjeta_Credito_Tuya, "Pagos y consultas");
+		} catch (Exception e) {
+			Serenity.takeScreenshot();
+			ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + WEBVIEW_CONSULTA_TU_SIM
+					+ " en la categoría de " + categoria);
+			Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + WEBVIEW_CONSULTA_TU_SIM +
+					" Detalle del error: " + e.getMessage());
+		}
+		GoBack.DoWhileForBacKPage(actor, BTN_Tarjeta_Credito_Tuya, "Pagos y consultas");
+	}
+	@Step
+	public void Ingresar_Servicios_Chat(Actor actor) {
+		try {
+			actor.attemptsTo(
+					//Click.on(BTN_VER_MAS),
+					Click.on(BTN_Servicios_Chat),
+					WaitUntil.the(WEBVIEW_Servicios_Chat, isVisible())
+			);
+
+			GoBack.DoWhileForBacKPage(actor, BTN_Servicios_Chat, "Pagos y consultas");
+		} catch (Exception e) {
+			Serenity.takeScreenshot();
+			ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + WEBVIEW_CONSULTA_TU_SIM
+					+ " en la categoría de " + categoria);
+			Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + WEBVIEW_CONSULTA_TU_SIM +
+					" Detalle del error: " + e.getMessage());
+		}
+		GoBack.DoWhileForBacKPage(actor, BTN_Servicios_Chat, "Pagos y consultas");
+	}
+
+	@Step
+	public void Ingresar_a_Familia_y_Amigos(Actor actor) {
+		try {
+			actor.attemptsTo(
+					//Click.on(BTN_VER_MAS),
+					Click.on(BTN_Familia_y_Amigos),
+					WaitUntil.the(WEBVIEW_Familia_y_Amigos, isVisible())
+			);
+
+			GoBack.DoWhileForBacKPage(actor, BTN_Familia_y_Amigos, "Pagos y consultas");
+		} catch (Exception e) {
+			Serenity.takeScreenshot();
+			ValidarRecorrido.verificacionErrores.append("- No fue posible validar el botón de " + WEBVIEW_CONSULTA_TU_SIM
+					+ " en la categoría de " + categoria);
+			Serenity.recordReportData().withTitle("Error").andContents("Ocurrió un problema con el botón de " + WEBVIEW_CONSULTA_TU_SIM +
+					" Detalle del error: " + e.getMessage());
+		}
+		GoBack.DoWhileForBacKPage(actor, BTN_Familia_y_Amigos, "Pagos y consultas");
+	}
 
 }

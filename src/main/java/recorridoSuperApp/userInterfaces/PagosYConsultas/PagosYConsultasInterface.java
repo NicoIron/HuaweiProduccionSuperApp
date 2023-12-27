@@ -71,8 +71,33 @@ public class PagosYConsultasInterface extends PageObject {
 		.located(MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView"));
 	public static final Target BTN_AGENDAR_TURNOS = Target.the("Clic en botón de Agendar turnos")
 		.located(MobileBy.xpath("//*[contains(@text,'Agendar turnos') and @index='1']"));
+
+	public static final Target BTN_Vehiculo_Conectado = Target.the("Clic en botón de Vehiculo conectado")
+			.located(MobileBy.xpath("//*[contains(@text,'Vehículo conectado')]"));
 	public static final Target WEBVIEW_AGENDAR_TURNOS = Target.the("Validar que se encuentre en el webview de Agendar turnos")
 		.located(MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView"));
+
+	public static final Target WEBVIEW_Vehiculo_conectado = Target.the("Validar que se encuentre en el webview de Vehiculo conectado")
+			.located(MobileBy.xpath("//android.widget.TextView[@resource-id=\"com.clarocolombia.miclaro:id/h5_tv_title\"]"));
+
+	public static final Target BTN_Tarjeta_Credito_Tuya = Target.the("Validar que se encuentre en el Tarjeta credito tuya")
+			.located(MobileBy.xpath("//*[contains(@text,'Tarjeta Credito Tuya')]"));
+
+	public static final Target WEBVIEW_Tarjeta_Credito_Tuya = Target.the("Validar que se encuentre en el webview de Tarjeta credito tuya")
+			.located(MobileBy.xpath("//android.widget.TextView[@resource-id=\"com.clarocolombia.miclaro:id/h5_tv_title\"]"));
+
+	public static final Target BTN_Servicios_Chat = Target.the("Validar que se encuentre en el Servicios Chat")
+			.located(MobileBy.xpath("//*[contains(@text,'Servicios Chat')]"));
+
+	public static final Target WEBVIEW_Servicios_Chat = Target.the("Validar que se encuentre en el webview de Servicios Chat")
+			.located(MobileBy.xpath("//android.widget.TextView[@text=\"Chat empresarial\"]"));
+
+	public static final Target BTN_Familia_y_Amigos = Target.the("Validar que se encuentre en el Familia y amigos")
+			.located(MobileBy.xpath("//*[contains(@text,'Familia y Amigos')]"));
+
+	public static final Target WEBVIEW_Familia_y_Amigos = Target.the("Validar que se encuentre en el webview de Familia y amigos")
+			.located(MobileBy.xpath("//android.widget.TextView[@text=\"Familia y Amigos\"]"));
+
 
 
 
